@@ -39,7 +39,7 @@ johnSnow(){
       // render the data I found in the url for Jon snow's birth
       // how though? --> maybe a this.setState
       <div>
-    <h1> John Snow was born in {this.state.data.character}</h1> 
+    <h1> John Snow was born in {this.state.character}</h1> 
     </div>
     );
   }
