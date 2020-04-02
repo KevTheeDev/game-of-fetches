@@ -38,7 +38,9 @@ johnSnow(){
     return (
       // render the data I found in the url for Jon snow's birth
       // how though? --> maybe a this.setState
-    <h1> John Snow was born in </h1>
+      <div>
+    <h1> John Snow was born in info={this.state.data}</h1>
+    </div>
     );
   }
 }
