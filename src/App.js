@@ -7,7 +7,6 @@ class App extends React.Component {
     super(props);
     this.state = { 
       date: null,
-      url: 'http://anapioficeandfire.com/api/characters/583',
       character: [],
      };
   }
@@ -25,9 +24,21 @@ class App extends React.Component {
       console.log(`something went wrong`);
     }
   }
+
+johnSnow(){
+  // axios gets whats inside the data property
+  // res and res.data --> to get the results of the in url
+  //
+  axios.get('http://anapioficeandfire.com/api/characters/583')
+        .then((res => console.log(res.data))
+        ).catch();
+}
+
   render() {
     return (
-    <h1> John Snow was born in thi{this}</h1>
+      // render the data I found in the url for Jon snow's birth
+      // how though? --> maybe a this.setState
+    <h1> John Snow was born in </h1>
     );
   }
 }
