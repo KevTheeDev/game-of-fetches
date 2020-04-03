@@ -28,8 +28,11 @@ class App extends React.Component {
   
 
     // this may be like a component did mount(){ }
-    // axios gets whats inside the data property --> in this the (what's inside the URL)
+    // axios .get(s) whats inside the data property --> in this the (what's inside the URL)
+    // .then in the promise to grab the result
     // res and res.data --> to get the results of the in url
+      // this.etsTate to update the character : add the res. to the .data to .born
+      // .catch to resolve any errors
 johnSnow(){
   axios.get('https://anapioficeandfire.com/api/characters/583')
         .then(res => this.setState({ character: res.data.born })).catch(e => console.error(e))
