@@ -28,29 +28,31 @@ class App extends React.Component {
   
 
     // this may be like a component did mount(){ }
+    // axios gets whats inside the data property --> in this the (what's inside the URL)
+    // res and res.data --> to get the results of the in url
 johnSnow(){
-  // axios gets whats inside the data property --> in this the (what's inside the URL)
-  // res and res.data --> to get the results of the in url
-  //
-  axios.get('http://anapioficeandfire.com/api/characters/583')
-        .then(res => { 
-          const character = res.data;
-          this.setState({ character });
-          console.log(character); 
-      }).catch((Error) => {
-        console.log(Error);
-      });
-    }
+  axios.get('https://anapioficeandfire.com/api/characters/583')
+        .then(res => this.setState({ character: res.data.born })).catch(e => console.error(e))
+          // console.log(this.state.character); 
+      }
+      
+
     
+componentDidMount(){
+  this.johnSnow();
+}
+
     render() {
       return (
         // render the data I found in the url for Jon snow's birth
         // how though? --> maybe a this.setState
         <div>
-    <h1> John Snow was born in {this.state.born}</h1> 
+    <h1> John Snow was born {this.state.character}</h1> 
     {/* watch a video on api's / axios and DOM */}
     </div>
-    );
+    )
   }
 }
 export default App;
+
+console.log('because nothing else will show up on the console')
