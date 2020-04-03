@@ -19,16 +19,17 @@ class App extends React.Component {
   // json () a asynchronous call 
   // ({ update character with the data from the object })
   // catch --> catches the error if try fails
-    async gameofT(){
-      const rungameofT = await axios.get('http://anapioficeandfire.com/api/characters/583')
-      this.setState ({ character: rungameofT });
-    } catch(e){
-      console.log(`something went wrong`);
-    }
+    // async gameofT(){
+    //   const rungameofT = await axios.get('http://anapioficeandfire.com/api/characters/583')
+    //   this.setState ({ character: rungameofT });
+    // } catch(e){
+    //   console.log(`something went wrong`);
+    // }
   
 
+    // this may be like a component did mount(){ }
 johnSnow(){
-  // axios gets whats inside the data property
+  // axios gets whats inside the data property --> in this the (what's inside the URL)
   // res and res.data --> to get the results of the in url
   //
   axios.get('http://anapioficeandfire.com/api/characters/583')
@@ -41,7 +42,7 @@ johnSnow(){
       // render the data I found in the url for Jon snow's birth
       // how though? --> maybe a this.setState
       <div>
-    <h1> John Snow was born in {this.state.character}</h1> 
+    <h1> John Snow was born in {this.state.rungameOT}</h1> 
     {/* watch a video on api's / axios and DOM */}
     </div>
     );
