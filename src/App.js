@@ -33,16 +33,16 @@ johnSnow(){
   // res and res.data --> to get the results of the in url
   //
   axios.get('http://anapioficeandfire.com/api/characters/583')
-        .then((res => console.log(res.data))
-        ).catch();
-}
+        .then(res => { console.log(res); this.setState({ character: res.data});
+      }).catch();
+    }
 
   render() {
     return (
       // render the data I found in the url for Jon snow's birth
       // how though? --> maybe a this.setState
       <div>
-    <h1> John Snow was born in {this.state.rungameOT}</h1> 
+    <h1> John Snow was born in {this.props.character}</h1> 
     {/* watch a video on api's / axios and DOM */}
     </div>
     );
