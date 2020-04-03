@@ -7,7 +7,7 @@ class App extends React.Component {
     super(props);
     this.state = { 
       // data: true,
-      character: [],
+      character: null,
      };
   }
 
@@ -37,7 +37,9 @@ johnSnow(){
           const character = res.data;
           this.setState({ character });
           console.log(character); 
-      }).catch();
+      }).catch((Error) => {
+        console.log(Error);
+      });
     }
     
     render() {
