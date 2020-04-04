@@ -31,6 +31,8 @@ class App extends React.Component {
 
     // this may be like a component did mount(){ }
     // axios .get(s) whats inside the data property --> in this the (what's inside the URL)
+      // calls an api
+      // await mimics asynchronous function
     // .then in the promise to grab the result
     // res and res.data --> to get the results of the in url
       // this.etsTate to update the character : add the res. to the .data to .born
@@ -46,13 +48,9 @@ getTheRestOfTheCharacters(){
   let margery = 'http://anapioficeandfire.com/api/characters/16';
   let targeayenHouse = 'http://www.anapioficeandfire.com/api/houses/378';
   let lannisterHouse = 'http://www.anapioficeandfire.com/api/houses/229';
-  
-  axios.all([margery, targeayenHouse, lannisterHouse]).then(axios.spread((...response) => {
-  })).catch(e => {
-    console.log(e);
-  })
-}
-       
+
+// promises wrap asynchronous functions --> promise.all
+}   
     
 componentDidMount(){
   this.johnSnow();
