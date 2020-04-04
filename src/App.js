@@ -53,7 +53,7 @@ getTheRestOfTheCharacters(){
     console.log(e);
   })
 }
-      
+       
 
 componentDidMount(){
   this.johnSnow();
