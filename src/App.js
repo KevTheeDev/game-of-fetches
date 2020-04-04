@@ -32,17 +32,32 @@ class App extends React.Component {
     // .then in the promise to grab the result
     // res and res.data --> to get the results of the in url
       // this.etsTate to update the character : add the res. to the .data to .born
-      // .catch to resolve any errors
+      // .catch to resolve any errors and then log those errors in the console
 johnSnow(){
-  axios.get('https://anapioficeandfire.com/api/characters/583')
-        .then(res => this.setState({ character: res.data.born })).catch(e => console.error(e))
-          // console.log(this.state.character); 
+  let chaUrl = 'https://anapioficeandfire.com/api/characters/583';
+  axios.get(chaUrl)
+        .then(res => this.setState({ character: res.data.character })).catch(e => console.error(e))
       }
+
+
+getTheRestOfTheCharacters(){
+  let margery = 'http://anapioficeandfire.com/api/characters/16';
+  let targeayenHouse = 'http://www.anapioficeandfire.com/api/houses/378'
+  let lannisterHouse = 'http://www.anapioficeandfire.com/api/houses/229'
+  
+  axios.all([margery, targeayenHouse, lannisterHouse]).then(res => this.setState(axios.spread((...res) => {
+    const res1  = res[0]
+    const res2 = res[1]
+    const res3  = res[2]
+  }))).catch(e => {
+    console.log(e);
+  })
+}
       
 
-    
 componentDidMount(){
   this.johnSnow();
+  this.getTheRestOfTheCharacters()
 }
 
     render() {
@@ -51,6 +66,9 @@ componentDidMount(){
         // how though? --> maybe a this.setState
         <div>
     <h1> John Snow was born {this.state.character}</h1> 
+    <h1> Margaery Tyrell born in { this.state.res1 } </h1>
+    <h1> The region of House Targaryen is { this.state.res2 } </h1>
+    <h1> The coat of arms of House Lannister is { this.state.res3 } </h1>
     {/* watch a video on api's / axios and DOM */}
     </div>
     )
