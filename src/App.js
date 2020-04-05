@@ -44,7 +44,6 @@ johnSnow(){
         .then(res => this.setState({ character: res.data.character })).catch(e => console.error(e))
       }
 
-      
 // getTheRestOfTheCharacters(){
 //   let margery = 'http://anapioficeandfire.com/api/characters/16';
 //   let targeayenHouse = 'http://www.anapioficeandfire.com/api/houses/378';
