@@ -37,24 +37,24 @@ class App extends React.Component {
     // res and res.data --> to get the results of the in url
       // this.etsTate to update the character : add the res. to the .data to .born
       // .catch to resolve any errors and then log those errors in the console
+        // e is the error
 johnSnow(){
   let chaUrl = 'https://anapioficeandfire.com/api/characters/583';
   axios.get(chaUrl)
         .then(res => this.setState({ character: res.data.character })).catch(e => console.error(e))
       }
 
+// getTheRestOfTheCharacters(){
+//   let margery = 'http://anapioficeandfire.com/api/characters/16';
+//   let targeayenHouse = 'http://www.anapioficeandfire.com/api/houses/378';
+//   let lannisterHouse = 'http://www.anapioficeandfire.com/api/houses/229';
 
-getTheRestOfTheCharacters(){
-  let margery = 'http://anapioficeandfire.com/api/characters/16';
-  let targeayenHouse = 'http://www.anapioficeandfire.com/api/houses/378';
-  let lannisterHouse = 'http://www.anapioficeandfire.com/api/houses/229';
-
-// promises wrap asynchronous functions --> promise.all
-}   
+// // promises wrap asynchronous functions --> promise.all
+// }   
     
 componentDidMount(){
   this.johnSnow();
-  this.getTheRestOfTheCharacters()
+  // this.getTheRestOfTheCharacters();
 }
 
     render() {
@@ -62,7 +62,7 @@ componentDidMount(){
         // render the data I found in the url for Jon snow's birth
         // 
         <div>
-    <h1> John Snow was born {this.state.character}</h1> 
+    <h1> John Snow was born{this.state.character}</h1> 
     {/* <h1> Margaery Tyrell born in { this.state.character } </h1>
     <h1> The region of House Targaryen is { this.state } </h1>
     <h1> The coat of arms of House Lannister is { this.state } </h1> */}
