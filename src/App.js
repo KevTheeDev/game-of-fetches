@@ -67,6 +67,15 @@ componentDidMount(){
     <h1> The region of House Targaryen is { this.state } </h1>
     <h1> The coat of arms of House Lannister is { this.state } </h1> */}
     {/* watch a video on api's / axios and DOM */}
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+
     </div>
     )
   }
